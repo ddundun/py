@@ -133,16 +133,6 @@
      </item>
     </layout>
    </widget>
-   <widget class="QTableWidget" name="tablew">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>270</y>
-      <width>331</width>
-      <height>241</height>
-     </rect>
-    </property>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
