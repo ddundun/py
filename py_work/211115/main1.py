@@ -41,17 +41,10 @@ class WindowClass(QMainWindow, form_class):
             print(e)
 
     def mybtnfn(self):
-        # self.tablew.setItem(self.row, self.col, QTableWidgetItem(str(self.value)))
-        self.tablew.append(self.kor,self.eng,self.math)
+        self.tablew.setItem(1,0, QTableWidgetItem(str(self.kor)))
+        # self.tablew.append(self.kor,self.eng,self.math)
         print("누름")
-        self.value += 1
-        # self.row +=1
-        self.col += 1
-        if (self.col > 4):  # 4이상이되면 밑줄로 >3 or ==4 //0부터시작하기때문에
-            self.row += 1
-            self.col = 0
-        if (self.row > 9):  # ==10
-            self.tablew.setRowCount(self.row + 1)
+
 
     def signalfn(self):
         self.savebtn.clicked.connect(self.mybtnfn)
