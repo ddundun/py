@@ -1,6 +1,6 @@
 from openpyxl import load_workbook
 
-wb= load_workbook("../211108/c.xlsx")
+wb= load_workbook("../excel/211108/c.xlsx")
 ws =wb.active
 
 for x in range(1,ws.max_row+1):

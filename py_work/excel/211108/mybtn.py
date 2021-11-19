@@ -39,7 +39,7 @@ class MyApp(QWidget):
         ex04.loadCxlsx()
 
     def btn2clicked(self):
-        chapter5.dxlsx(str(randint(0,100)))
+        chapter5.dxlsx(str(randint(0, 100)))
 
 
 

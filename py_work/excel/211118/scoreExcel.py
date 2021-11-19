@@ -11,6 +11,7 @@ class ScoreExcel:
         wb = load_workbook('score.xlsx')
         ws = wb.active
 
+        # 엑셀에서는 1, 배열에선 0
         ws.delete_rows(rowIndex - 1)
         wb.save('score.xlsx')
         wb.close()
