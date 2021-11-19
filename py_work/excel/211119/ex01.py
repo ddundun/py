@@ -1,5 +1,6 @@
 import sys
 from PyQt5.QtWidgets import *
+import exexcel as bbb
 
 
 class MyApp(QWidget):
@@ -8,44 +9,62 @@ class MyApp(QWidget):
         self.initUi()
 
     def makefile(self):
-        print("기본파일생성")
-        
+        try:
+            bbb.makebasic()
+        except Exception as e:
+            print(e)
+
     def manjumfn(self):
-        print("만점")
+        bbb.dmajum()
+        QMessageBox.information(self,'title','10점으로 다 바꿈')
 
     def initUi(self):
         self.filebtn = QPushButton("파일만들기")
         self.manjumbtn = QPushButton("퀴즈2 만점만들기")
+        self.총점버튼 =QPushButton("총점버튼")
+        self.성적버튼 =QPushButton("성적버튼")
 
-
+        # 가로로된 레이아웃 만들기
         self.hbox = QHBoxLayout()
         self.hbox.addStretch(1)
         self.hbox.addWidget(self.filebtn)
         self.hbox.addWidget(self.manjumbtn)
+        # self.hbox.addWidget(self.총점버튼)
+        # self.hbox.addWidget(self.성적버튼)
         self.hbox.addStretch(1)
-        
+
+        self.hbox2 = QHBoxLayout()
+        self.hbox2.addStretch(1)
+        self.hbox2.addWidget(self.총점버튼)
+        self.hbox2.addWidget(self.성적버튼)
+        self.hbox2.addStretch(1)
+
+
         # 세로로된 레이아웃 만들기
         self.vbox = QVBoxLayout()
 
         # 세로로된 레이아웃에 버튼 넣기
-        self.vbox.addStretch(5)
+        self.vbox.addStretch(3)
         self.vbox.addLayout(self.hbox)
-        self.vbox.addLayout(self.hbox)
+        self.vbox.addLayout(self.hbox2)
         self.vbox.addStretch(1) #3:1비율
 
         # self.vbox.addLayout(self.filebtn) -> 가로로두개
         # self.vbox.addLayout(self.manjumbtn) -> 가로로두개
 
 
-        self.setLayout(self.vbox)
+        self.setLayout(self.vbox) #vbox로 레이아웃,,?
         self.setWindowTitle("FirstApp")
         self.move(300,300)
         self.resize(200,200)
         self.show()
 
-        # 버튼에 이벤트 닫기
+        # 버튼에 이벤트 달기
         self.filebtn.clicked.connect(self.makefile)
         self.manjumbtn.clicked.connect(self.manjumfn)
+        self.총점버튼.clicked.connect(bbb.총점함수)
+        self.성적버튼.clicked.connect(bbb.성적함수)
+
 
 if __name__== '__main__':
     app=QApplication(sys.argv)

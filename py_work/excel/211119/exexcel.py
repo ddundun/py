@@ -1,11 +1,12 @@
 from openpyxl import *
 
-''' 파일 생성하고 기본 데이터 넣는 함수'''
+''' 파일 생성 하고 기본 데이터 넣는 함수'''
 
 
 def makebasic():
     wb = Workbook()
     ws = wb.active
+
     scores = [
         (1, 10, 8, 5, 14, 26, 12),
         (2, 7, 3, 7, 15, 24, 18),
@@ -19,9 +20,58 @@ def makebasic():
         (10, 9, 8, 8, 20, 25, 20)
     ]
 
-    ws.append(("학번", "출석", "퀴즈1", "퀴즈2", "중간고사", "기말고사", "프로젝트"))
+    ws.append(['학번', '출석', '퀴즈1', '퀴즈2', '중간고사', '기말고사', '프로젝트'])
     for s in scores:  # 기존 성적 데이터 넣기
         ws.append(s)
 
-    ws.save('score.xlsx')
+    wb.save('score.xlsx')
+    wb.close()
+
+
+def dmajum():
+    wb = load_workbook('score.xlsx')
+    ws = wb.active
+
+    for idx, cell in enumerate(ws['D']):
+        if idx == 0:
+            continue
+        else:
+            cell.value = 10
+
+    wb.save('score.xlsx')
+    wb.close()
+
+
+def 총점함수():
+    wb = load_workbook('score.xlsx')
+    ws = wb.active
+
+    ws['H1'] = "총점"  # sum
+    # minrow mincol2하면 학번출석날라감
+    for row in ws.iter_rows(min_row=2, min_col=2):
+        sum=0
+        for cell in row[0:6]:
+            sum += cell.value
+        print('sum',sum)
+        # print(row[0].value,
+        #       row[1].value,
+        #       row[2].value,
+        #       row[3].value,
+        #       row[4].value,
+        #       row[5].value,
+        #       row[6].value,
+        #       row[7].value)
+        row[6].value = sum
+
+        wb.save('score.xlsx')
+        wb.close()
+
+
+def 성적함수():
+    wb = load_workbook('score.xlsx')
+    ws = wb.active
+
+    ws['I1'] = "성적"
+
+    wb.save('score.xlsx')
     wb.close()
