@@ -49,10 +49,10 @@ def 총점함수():
     ws['H1'] = "총점"  # sum
     # minrow mincol2하면 학번출석날라감
     for row in ws.iter_rows(min_row=2, min_col=2):
-        sum=0
+        sum = 0
         for cell in row[0:6]:
             sum += cell.value
-        print('sum',sum)
+        print('sum', sum)
         # print(row[0].value,
         #       row[1].value,
         #       row[2].value,
@@ -72,6 +72,22 @@ def 성적함수():
     ws = wb.active
 
     ws['I1'] = "성적"
+    try:
+        for col in ws.iter_cols(min_col=8, min_row=2, max_col=8):
+            for idx, cell in enumerate(col, start=2):  # enumerate : 번호달아주는 것 idx 2,3,4,5~ value는 value
+                if int(cell.value) >= 90:
+                    ws['I' + str(idx)] = 'A'
+                elif int(cell.value) >= 80:
+                    ws['I' + str(idx)] = 'B'
+                elif int(cell.value) >= 70:
+                    ws['I' + str(idx)] = 'C'
+                elif int(cell.value) >= 60:
+                    ws['I' + str(idx)] = 'D'
+                else:
+                    ws['I' + str(idx)] = 'F'
 
+
+    except Exception as e:
+        print(e)
     wb.save('score.xlsx')
     wb.close()
