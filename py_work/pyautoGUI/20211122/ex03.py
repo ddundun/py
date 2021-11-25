@@ -8,7 +8,7 @@ pyautogui.PAUSE =1 #1초씩 쉬어달라하기
 #
 # img = pyautogui.screenshot()
 #
-# img.save('a.png')
+# img.save('font.png')
 
 for i in range(5):
     time.sleep(1) #1초씩 쉬어가면서

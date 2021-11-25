@@ -58,5 +58,5 @@ print('예측값 = ',predictvalue)
 
 plt.scatter(25,242,marker='^')
 plt.scatter(3,2,marker='*')
-plt.savefig('a.png')
+plt.savefig('font.png')
 plt.show()
