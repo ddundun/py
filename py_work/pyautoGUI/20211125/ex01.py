@@ -13,10 +13,10 @@ class MyApp(QWidget):
     def doms(self):
         try :
             time.sleep(3)
-            box = pyautogui.locateOnScreen('font.PNG', confidence = 0.8)
+            box = pyautogui.locateOnScreen('font.png', confidence = 0.8)
             pyautogui.click(box)
             pyautogui.click()
-            pyautogui.click(10,200, duration =1)
+            pyautogui.click(10,200, duration =1) #절대좌표
 
         except Exception as e:
             print(e)
