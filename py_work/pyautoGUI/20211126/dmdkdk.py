@@ -23,6 +23,19 @@ weather=soup.find("ul",{"class":"weather_info_list"})
 w1= w1.get_text()
 weather=weather.get_text()
 
-# print('날씨',weather1.strip(),weather2.strip(),'미세먼지',munzi)
-print('내일날씨 = ',weather)
 print('현재날씨 = ',w1)
+print('내일날씨 = ',weather)
+
+w2= w1.split()
+print(w2)
+
+w3= w2[2].split('온도')
+print(w3)
+
+w4= w3[1].split('°')
+print(w4)
+
+if(int(w4[0])>=10):
+    print('오늘 가디건챙기세용')
+elif(int(w4[0])<=5):
+    print('롱패딩추천')
