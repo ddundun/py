@@ -9,7 +9,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> b=input("두번째입력")
 두번째입력20
 >>> b
-'20'
+'211126-chrome'
 >>> print("두입력의합:",eval(a+b))
 두입력의합: 1020
 >>> print("두입력의합:",eval(a)+eval(b))

@@ -1,7 +1,7 @@
 # def doA(a,b,c,d=50):
 #     print("a= ",a,"b= ",b,"c= ",c)
 #     print("d= ",d)
-#     doA(c=20, b=10, a=5, d=20)
+#     doA(c=211126-chrome, b=10, a=5, d=211126-chrome)
 from openpyxl import Workbook
 
 

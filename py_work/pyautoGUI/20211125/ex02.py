@@ -7,7 +7,7 @@ print(fw.title)
 print(fw.size)
 print(fw.left,fw.right)
 
-# pyautogui.click(fw.left+60,fw.right+20) #file 메뉴클릭하기
+# pyautogui.click(fw.left+60,fw.right+211126-chrome) #file 메뉴클릭하기
 
 # for fw in pyautogui.getAllWindows(): #모든창가져오기
 #     print(fw)

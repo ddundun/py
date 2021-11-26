@@ -8,7 +8,7 @@ ws2 = wb.create_sheet("NewSheet", 2)
 ws1.sheet_properties.tabColor="9532a8"
 ws2.sheet_properties.tabColor="457a87"
 
-# a= {"aa":10,"bb":20}
+# a= {"aa":10,"bb":211126-chrome}
 #
 # print(a["aa"])
 # print(a["bb"])
