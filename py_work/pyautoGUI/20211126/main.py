@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 import sys
+
+from PyQt5.QtGui import QPixmap
+
 from weather import weather
 from PyQt5 import *
 from PyQt5 import uic
@@ -59,6 +62,20 @@ class WindowClass(QMainWindow, form_class):
 
         if (int(w4[0]) >= 10):
             print('오늘 가디건챙기세용')
+
+            label1 = QLabel(self)
+
+            label1.move(10, 10)
+
+            # 이미지 관련 클래스 생성 및 이미지 불러오기
+
+            pixmap = QPixmap('D:\Image\i2.png')
+
+            # 이미지 관련 클래스와 라벨 연결
+            label1.setPixmap(pixmap)
+
+            self.show()
+
         elif (int(w4[0]) <= 5):
             print('롱패딩추천')
     #     try:

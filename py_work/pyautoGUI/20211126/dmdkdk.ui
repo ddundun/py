@@ -67,7 +67,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="weatherLabel">
+         <widget class="QLabel" name="label1">
           <property name="text">
            <string/>
           </property>
