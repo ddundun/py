@@ -15,7 +15,8 @@ class WindowClass(QMainWindow, form_class):
         self.setupUi(self)
         self.searchbtn.clicked.connect(self.searchfn)
         self.mywidget = Widgets(self)
-        self.setWidget(self.mywidget)
+
+
 
 
     def searchfn(self):

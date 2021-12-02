@@ -17,6 +17,7 @@ for a in links:
         # print(a.text)
         if a.text in 'notice':
             # print(a.text)
+            pass
 '''
     BeatifulSoup
     find함수 -> html태그 찾을 때 사용
