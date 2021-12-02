@@ -48,7 +48,7 @@ class WindowClass(QMainWindow, form_class):
     
     def recomfn(self):
         print("추천")
-
+        self.label_1.setText(self.w1)
 
 
 
