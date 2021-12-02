@@ -13,9 +13,9 @@ class WindowClass(QMainWindow, form_class):
         super().__init__()
         self.setWindowIcon(QIcon('images/2.png'))
         self.setupUi(self)
-        self.searchbtn.clicked.connect(self.searchfn)
-        self.mywidget = Widgets(self)
 
+        self.searchbtn.clicked.connect(self.searchfn)
+        self.recombtn.clicked.connect(self.recomfn)
 
 
 
@@ -45,26 +45,9 @@ class WindowClass(QMainWindow, form_class):
 
         elif (int(w4[0]) <= 5):
             print('롱패딩추천')
-
-class Widgets(QWidget):
-    def __init__(self, parent):
-        super(Widgets,self).__init__(parent)
-
-        ##### 위젯 함수 실행
-        self.initWidget()
-
-    ##### 위젯셋팅
-    def initWidget(self):
-        label_1 = QLabel("라벨1", self)
-        label_2 = QLabel("라벨2", self)
-        label_3 = QLabel("라벨3", self)
-
-        ##### 레이이아웃
-        boxlayout = QVBoxLayout(self)
-        boxlayout.addWidget(label_1)
-        boxlayout.addWidget(label_2)
-        boxlayout.addWidget(label_3)
-
+    
+    def recomfn(self):
+        print("추천")
 
 
 

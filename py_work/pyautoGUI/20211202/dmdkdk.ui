@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>날씨-옷추천</string>
+   <string>날씨프로그램</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
@@ -33,7 +33,14 @@
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>images/1.png</normaloff>images/2.png</iconset>
+            <normaloff>images/arrow-circle-225.png</normaloff>images/arrow-circle-225.png</iconset>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="recombtn">
+          <property name="text">
+           <string>옷추천</string>
           </property>
          </widget>
         </item>
@@ -42,36 +49,26 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_4">
         <item>
-         <widget class="QLabel" name="weatherIcon">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>16</width>
-            <height>16</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16</width>
-            <height>16</height>
-           </size>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLabel" name="label_1">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
         <item>
-         <widget class="QLabel" name="label1">
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </item>
