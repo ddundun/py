@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
 import sys
-
-from PyQt5.QtGui import QPixmap
-
+from PyQt5.QtGui import *
 from weather import weather
-from PyQt5 import *
 from PyQt5 import uic
 from PyQt5.QtWidgets import *
 from bs4 import BeautifulSoup
@@ -25,7 +22,23 @@ class WindowClass(QMainWindow, form_class):
         self.searchbtn.clicked.connect(self.searchfn)
     #     self.loadbtn.clicked.connect(self.loadfn)
     #     self.createbtn.clicked.connect(self.createfn)
+    #     label = QLabel()
+    #     label.setPixmap(QPixmap("logo.png"))
+    #     self.setCentralWidget(label)
+
+    # def initWidget(self):
+    #     label_1 = QLabel("라벨1", self)
+    #     label_2 = QLabel("라벨2", self)
+    #     label_3 = QLabel("라벨3", self)
     #
+    #     boxlayout = QVBoxLayout(self)
+    #     boxlayout.addWidget(label_1)
+    #     boxlayout.addWidget(label_2)
+    #     boxlayout.addWidget(label_3)
+
+
+
+
     def searchfn(self):
         print("searchfn")
 
@@ -63,38 +76,22 @@ class WindowClass(QMainWindow, form_class):
         if (int(w4[0]) >= 10):
             print('오늘 가디건챙기세용')
 
-            label1 = QLabel(self)
-
-            label1.move(10, 10)
-
-            # 이미지 관련 클래스 생성 및 이미지 불러오기
-
-            pixmap = QPixmap('D:\Image\i2.png')
-
-            # 이미지 관련 클래스와 라벨 연결
-            label1.setPixmap(pixmap)
-
-            self.show()
+            label = QLabel()
+            label.setPixmap(QPixmap("../20211202/images/2.png"))
+            self.setCentralWidget(label)
 
         elif (int(w4[0]) <= 5):
             print('롱패딩추천')
-    #     try:
-    #         kor = (self.koredit.text())
-    #         eng = (self.engedit.text())
-    #         math = (self.mathedit.text())
-    #         tot = int(kor) + int(eng) + int(math)
-    #         avg = tot / 3
-    #         print('tot = ', tot)
-    #         print('avg = ', avg)
-    #         self.mex.savefn(kor, eng, math, tot, avg)
-    #     except Exception as e:
-    #         print(e)
-    #
-    # def loadfn(self):
-    #     self.mex.loadfn()
-    #
-    # def createfn(self):
-    #     self.mex.createfn()
+            label1 =QLabel("",self)
+            label = QLabel()
+            label.setPixmap(QPixmap("../20211202/images/2.png"))
+            self.setCentralWidget(label)
+
+            self.label1.setText("롱패딩추천")
+
+
+
+
 
 
 if __name__ == "__main__":
