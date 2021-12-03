@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import *
 from bs4 import BeautifulSoup
 from urllib import parse, request
 
-form_class = uic.loadUiType("dmdkdk.ui")[0]
+form_class = uic.loadUiType("dmdkdkr.ui")[0]
 
 class WindowClass(QMainWindow, form_class):
     def __init__(self):
@@ -50,9 +50,12 @@ class WindowClass(QMainWindow, form_class):
             self.label_2.setText("가디건추천")
 
             # self.label.setText("으아아")
-            self.label.setPixmap(QPixmap("3.png"))
+            self.label_4.setPixmap(QPixmap("3.png"))
             self.show()
-    
+        # elif ((w4[0])==str):
+        #     alert = QMessageBox(self)
+        #     alert.setText("한국지역만 검색가능^^")
+        #     alert.exec_()
 
 
 

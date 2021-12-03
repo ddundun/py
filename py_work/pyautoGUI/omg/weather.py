@@ -79,6 +79,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         worker.signals.error.connect(self.alert)
         self.threadpool.start(worker)
 
+
     def weather_result(self, weather, forecasts):
         self.latitudeLabel.setText("%.2f °" % weather['coord']['lat'])
         self.longitudeLabel.setText("%.2f °" % weather['coord']['lon'])
