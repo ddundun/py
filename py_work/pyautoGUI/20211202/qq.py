@@ -2,7 +2,6 @@ import sys
 from PyQt5 import uic
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-from PyQt5.QtGui import QIcon
 from bs4 import BeautifulSoup
 from urllib import parse, request
 
@@ -15,7 +14,7 @@ class WindowClass(QMainWindow, form_class):
         self.setupUi(self)
 
         self.searchbtn.clicked.connect(self.searchfn)
-        self.recombtn.clicked.connect(self.recomfn)
+
 
 
 
@@ -33,6 +32,7 @@ class WindowClass(QMainWindow, form_class):
         # weather = soup.find("ul", {"class": "weather_info_list"})
         w1 = w1.get_text()
         # weather = weather.get_text()
+        self.label_1.setText('현재날씨 '+w1)
         print('현재날씨 = ', w1)
         w2 = w1.split()
 
@@ -41,14 +41,18 @@ class WindowClass(QMainWindow, form_class):
         w4 = w3[1].split('°')
 
         if (int(w4[0]) >= 10):
-            print('오늘 가디건챙기세용')
+            print("오늘 가디건챙기세요")
+            self.label_2.setText("오늘가디건챙기세요")
 
-        elif (int(w4[0]) <= 5):
-            print('롱패딩추천')
+        elif (int(w4[0]) <= 10):
+            self.label_2.setText("롱패딩추천")
+            print("롱패딩추천")
+            
+            # self.label.setText("으아아")
+            self.label.setPixmap(QPixmap("3.png"))
+            self.show()
     
-    def recomfn(self):
-        print("추천")
-        self.label_1.setText(self.w1)
+
 
 
 

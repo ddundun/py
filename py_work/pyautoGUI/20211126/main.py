@@ -65,29 +65,29 @@ class WindowClass(QMainWindow, form_class):
         # print('내일날씨 = ',weather)
 
         w2 = w1.split()
-        # print(w2)
+        print(w2)
 
         w3 = w2[2].split('온도')
-        # print(w3)
+        print(w3)
 
         w4 = w3[1].split('°')
-        # print(w4)
+        print(w4)
 
         if (int(w4[0]) >= 10):
             print('오늘 가디건챙기세용')
 
-            label = QLabel()
-            label.setPixmap(QPixmap("../20211202/images/2.png"))
-            self.setCentralWidget(label)
+            # label = QLabel()
+            # label.setPixmap(QPixmap("../20211202/images/2.png"))
+            # self.setCentralWidget(label)
 
-        elif (int(w4[0]) <= 5):
+        elif (int(w4[0]) <= 10):
             print('롱패딩추천')
-            label1 =QLabel("",self)
-            label = QLabel()
-            label.setPixmap(QPixmap("../20211202/images/2.png"))
-            self.setCentralWidget(label)
-
-            self.label1.setText("롱패딩추천")
+            # label1 =QLabel("",self)
+            # label = QLabel()
+            # label.setPixmap(QPixmap("../20211202/images/2.png"))
+            # self.setCentralWidget(label)
+            #
+            # self.label1.setText("롱패딩추천")
 
 
 
