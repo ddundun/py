@@ -1,6 +1,7 @@
 import sys
 from PyQt5 import uic
 from PyQt5.QtGui import *
+from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import *
 from bs4 import BeautifulSoup
 from urllib import parse, request
@@ -26,37 +27,51 @@ class WindowClass(QMainWindow, form_class):
         soup = BeautifulSoup(source.read(), 'html.parser')
 
         w1 = soup.find("div", {"class": "weather_graphic"})
+        c1 = soup.find("div",{"class":"temperature_info"})
         n1 = soup.find("ul", {"class": "weather_info_list"})
         w1 = w1.get_text()
-        n1 = n1.get_text()
+        n1 = n1.get_text() 
+        c1 = c1.get_text() #습도, 강수확률
         self.label_1.setText('현재날씨 '+w1)
-        print('내일날씨 = ', n1)
-
+        # print('내일날씨 = ', n1)
+        print(c1)
         n2= n1.split()
         print(n2)
         w2 = w1.split()
 
+        c2= c1.split()
+        print(c2)
+
+        n23 = (n2[0:11])
+        n32 = n2[11:]
+        print(n32)
         n3= n2[3].split('온도')
-        print(n3)
+        # print(n3)
         w3 = w2[2].split('온도')
 
         w4 = w3[1].split('°')
 
-        if (int(w4[0]) >= 10):
-            print("오늘 가디건챙기세요")
-            self.label_2.setText("오늘가디건챙기세요")
-
-        elif (int(w4[0]) < 10):
-            self.label_2.setText("가디건추천")
-
-            # self.label.setText("으아아")
-            self.label_4.setPixmap(QPixmap("3.png"))
+        if (int(w4[0]) <= 4):
+            self.label_2.setText("패딩 추천")
+            self.label_4.setPixmap(QPixmap("4.png"))
             self.show()
-        # elif ((w4[0])==str):
+
+        elif (int(w4[0]) < 8):
+            self.label_2.setText("코트 추천")
+            pixmap = QPixmap("8.png")
+            self.label_4.setPixmap(QPixmap(pixmap))
+            pixmap = pixmap.scaledToWidth(45)
+
+            self.show()
+        # elif ((w4[0])==' '):
         #     alert = QMessageBox(self)
         #     alert.setText("한국지역만 검색가능^^")
         #     alert.exec_()
-
+        elif (int(w4[0]) < 15):
+            self.label_2.setText("자켓 추천")
+            pixmap = QPixmap("8.png")
+            self.label_4.setPixmap(QPixmap(pixmap))
+            self.show()
 
 
 
