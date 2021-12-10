@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import *
 from bs4 import BeautifulSoup
 from urllib import parse, request
 
+
 form_class = uic.loadUiType("dmdkdkr.ui")[0]
 
 class WindowClass(QMainWindow, form_class):
@@ -15,6 +16,7 @@ class WindowClass(QMainWindow, form_class):
         self.setupUi(self)
 
         self.searchbtn.clicked.connect(self.searchfn)
+        # self.searchbtn_2.clicked.connect(self.)
 
     def searchfn(self):
 
@@ -38,7 +40,7 @@ class WindowClass(QMainWindow, form_class):
         n2= n1.split()
         print(n2)
         w2 = w1.split()
-
+        self.label_7.setText(c1)
         c2= c1.split()
         print(c2)
 
@@ -60,10 +62,9 @@ class WindowClass(QMainWindow, form_class):
             self.label_2.setText("코트 추천")
             pixmap = QPixmap("8.png")
             self.label_4.setPixmap(QPixmap(pixmap))
-            pixmap = pixmap.scaledToWidth(45)
-
             self.show()
-        # elif ((w4[0])==' '):
+
+        # elif ((w4[0])==NaN):
         #     alert = QMessageBox(self)
         #     alert.setText("한국지역만 검색가능^^")
         #     alert.exec_()
@@ -72,6 +73,7 @@ class WindowClass(QMainWindow, form_class):
             pixmap = QPixmap("8.png")
             self.label_4.setPixmap(QPixmap(pixmap))
             self.show()
+    # def fffn(self):
 
 
 

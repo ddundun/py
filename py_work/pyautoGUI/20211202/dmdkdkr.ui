@@ -58,6 +58,9 @@
            </item>
            <item>
             <widget class="QLabel" name="label_7">
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
+             </property>
              <property name="text">
               <string>TextLabel</string>
              </property>
